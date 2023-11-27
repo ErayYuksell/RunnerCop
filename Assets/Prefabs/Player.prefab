@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 142776294366190439}
   - component: {fileID: 40243773050636417}
   - component: {fileID: 5605764465049425897}
-  - component: {fileID: 7418837815077143344}
+  - component: {fileID: 2459206326307644469}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -760,8 +760,8 @@ Rigidbody:
   m_GameObject: {fileID: 5844163145002109151}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 100
+  m_AngularDrag: 100
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -776,16 +776,16 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 54
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &7418837815077143344
-BoxCollider:
+--- !u!136 &2459206326307644469
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844163145002109151}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7d6aeae32f0c2e9488b6e0f2f17fd390, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -796,9 +796,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.7092366, z: 0.658254}
-  m_Center: {x: 0, y: 0.8214717, z: 0.027905285}
+  serializedVersion: 2
+  m_Radius: 0.41946346
+  m_Height: 1.8003311
+  m_Direction: 1
+  m_Center: {x: 0.010067046, y: 0.89345264, z: 0}
 --- !u!1 &6089082773387465853
 GameObject:
   m_ObjectHideFlags: 0

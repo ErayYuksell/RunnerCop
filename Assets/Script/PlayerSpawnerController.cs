@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerSpawnerController : MonoBehaviour
 {
     [SerializeField] float playerSpeed = 5;
+    [SerializeField] GameObject playerObject;
     float xSpeed;
     Animator animator;
+    [SerializeField] List<GameObject> playerList = new List<GameObject>();
     void Start()
     {
+        SpawnPlayer();
         animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -43,5 +46,20 @@ public class PlayerSpawnerController : MonoBehaviour
     {
         animator.SetBool("IsRun", true);
         animator.SetBool("IsIdle", false);
+    }
+    void SpawnPlayer()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            GameObject newPlayerObject = Instantiate(playerObject, GetPlayerPosition(), Quaternion.identity, transform); // son yazdigim transform PlayerSpawner objesinin childi olarak olusturulmasi icin
+            playerList.Add(newPlayerObject);
+        }
+
+    }
+    Vector3 GetPlayerPosition()
+    {
+        Vector3 position = Random.onUnitSphere * 0.1f; // random olusturmayi 0.1 alanlik bolge icinde yap diyoruz 
+        Vector3 newPos = transform.position + position;
+        return newPos;
     }
 }
