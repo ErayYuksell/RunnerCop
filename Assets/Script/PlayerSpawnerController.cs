@@ -40,13 +40,13 @@ public class PlayerSpawnerController : MonoBehaviour
         Vector3 playerNewPosition = new Vector3(newXValue, transform.position.y, transform.position.z + playerSpeed * Time.deltaTime);
         transform.position = playerNewPosition;
         // her framede gecen sureyle carpmassam daha guclu cihazlarda frame daha hizli akar bu yuzden karakter daha hizliz hareket eder bu farkliligi engellemek icin carpiyorum 
-        PlayerIsRun();
+        //PlayerIsRun();
     }
-    void PlayerIsRun()
-    {
-        animator.SetBool("IsRun", true);
-        animator.SetBool("IsIdle", false);
-    }
+    //void PlayerIsRun()
+    //{
+    //    animator.SetBool("IsRun", true);
+    //    animator.SetBool("IsIdle", false);
+    //}
     void SpawnPlayer()
     {
         for (int i = 0; i < 7; i++)
