@@ -362,6 +362,7 @@
 "Assets/Script/CamController.cs"
 "Assets/Script/GateController.cs"
 "Assets/Script/PlayerSpawnerController.cs"
+"Assets/Script/RazorController.cs"
 -langversion:9.0
 
 /deterministic

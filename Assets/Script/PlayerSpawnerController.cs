@@ -87,4 +87,9 @@ public class PlayerSpawnerController : MonoBehaviour
             isPlaying = true;
         }
     }
+    public void PlayerGotKilled(GameObject playerGO)
+    {
+        playerList.Remove(playerGO);
+        Destroy(playerGO);
+    }
 }
