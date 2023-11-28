@@ -8,6 +8,7 @@ public class PlayerSpawnerController : MonoBehaviour
     [SerializeField] GameObject playerObject;
     float xSpeed;
     Animator animator;
+    bool isPlaying = false;
     [SerializeField] List<GameObject> playerList = new List<GameObject>();
     void Start()
     {
@@ -23,6 +24,10 @@ public class PlayerSpawnerController : MonoBehaviour
 
     void PlayerMovement()
     {
+        if (isPlaying)
+        {
+            return;
+        }
         float touchX = 0;
         float newXValue;
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) // dokunma varsa touchCount artacak dokunma sekli GetTouchPhase == hareket seklinde ise 
@@ -61,5 +66,12 @@ public class PlayerSpawnerController : MonoBehaviour
         Vector3 position = Random.onUnitSphere * 0.1f; // random olusturmayi 0.1 alanlik bolge icinde yap diyoruz 
         Vector3 newPos = transform.position + position;
         return newPos;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FinishLine"))
+        {
+            isPlaying = true;
+        }
     }
 }
