@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
     [SerializeField] Vector3 offSet;
     [SerializeField] GameObject Target;
+   
     void Start()
     {
         
