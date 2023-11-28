@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+public enum GateType { PlusGate, MultiplicationGate } // class disina yazmassam PlayerSpawnController dan ulasamassin
 public class GateController : MonoBehaviour
 {
     GameObject playerObject;
     PlayerSpawnerController playerScript;
     [SerializeField] TextMeshProUGUI text;
-    [SerializeField] int increaseAmount;
+    [SerializeField] int gateValue;
+   
+    public GateType gateType;
     bool isTouched = false;
+   
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("PlayerSpawner");
@@ -24,7 +28,14 @@ public class GateController : MonoBehaviour
     }
     void GateStart()
     {
-        text.text = "+" + increaseAmount;
+        if (gateType == GateType.PlusGate)
+        {
+            text.text = "+" + gateValue;
+        }
+        if (gateType == GateType.MultiplicationGate)
+        {
+            text.text = "X" + gateValue;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,6 +47,6 @@ public class GateController : MonoBehaviour
     }
     void MultiPlayer()
     {
-        playerScript.SpawnPlayer(increaseAmount);
+        playerScript.SpawnPlayer(gateValue, gateType);
     }
 }

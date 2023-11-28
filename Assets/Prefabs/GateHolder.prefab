@@ -218,6 +218,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6458532177180501126}
+  - component: {fileID: 4890839949840484103}
+  - component: {fileID: 7927392281634461847}
+  - component: {fileID: 5770496252154441470}
   m_Layer: 0
   m_Name: GateHolder
   m_TagString: Untagged
@@ -243,6 +246,68 @@ Transform:
   - {fileID: 6955344502962957088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &4890839949840484103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196952409324522160}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7927392281634461847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196952409324522160}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2935905, y: 1.9464799, z: 0.17877197}
+  m_Center: {x: -1.8031223, y: 0.99854344, z: 0.038778305}
+--- !u!114 &5770496252154441470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196952409324522160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a321bc34dd031324e9387e39a6738af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 5771100155901191659}
+  increaseAmount: 5
 --- !u!1 &3983044381600845594
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +320,6 @@ GameObject:
   - component: {fileID: 8555019413953699526}
   - component: {fileID: 5608138530170566006}
   - component: {fileID: 7359700056118756977}
-  - component: {fileID: 1282787514431292500}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -346,24 +410,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.95176363, y: 1, z: 1}
   m_Center: {x: -0.0071217166, y: 0, z: 0}
---- !u!114 &1282787514431292500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3983044381600845594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a321bc34dd031324e9387e39a6738af7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 5771100155901191659}
-  increaseAmount: 5
 --- !u!1 &4534053923907408906
 GameObject:
   m_ObjectHideFlags: 0

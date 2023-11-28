@@ -12,7 +12,7 @@ public class PlayerSpawnerController : MonoBehaviour
     [SerializeField] List<GameObject> playerList = new List<GameObject>();
     void Start()
     {
-       
+
         animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -52,13 +52,26 @@ public class PlayerSpawnerController : MonoBehaviour
     //    animator.SetBool("IsRun", true);
     //    animator.SetBool("IsIdle", false);
     //}
-    public void SpawnPlayer(int increaseAmount)
+    public void SpawnPlayer(int gateValue, GateType gateType)
     {
-        for (int i = 0; i < increaseAmount; i++)
+        if (gateType == GateType.PlusGate)
         {
-            GameObject newPlayerObject = Instantiate(playerObject, GetPlayerPosition(), Quaternion.identity, transform); // son yazdigim transform PlayerSpawner objesinin childi olarak olusturulmasi icin
-            playerList.Add(newPlayerObject);
+            for (int i = 0; i < gateValue; i++)
+            {
+                GameObject newPlayerObject = Instantiate(playerObject, GetPlayerPosition(), Quaternion.identity, transform); // son yazdigim transform PlayerSpawner objesinin childi olarak olusturulmasi icin
+                playerList.Add(newPlayerObject);
+            }
         }
+        if (gateType == GateType.MultiplicationGate)
+        {
+            int newAmount = playerList.Count * gateValue - playerList.Count; // listeyi bu yuzden yaptim listedeki eleman sayisini value ile carparak yeni eleman sayisi kadar donguyu donduruyorum 
+            for (int i = 0; i < newAmount; i++)
+            {
+                GameObject newPlayerObject = Instantiate(playerObject, GetPlayerPosition(), Quaternion.identity, transform); // son yazdigim transform PlayerSpawner objesinin childi olarak olusturulmasi icin
+                playerList.Add(newPlayerObject);
+            }
+        }
+
 
     }
     Vector3 GetPlayerPosition()
