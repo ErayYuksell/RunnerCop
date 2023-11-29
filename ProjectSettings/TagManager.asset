@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FinishLine
   - PlayerSpawner
+  - ZombieSpawner
   layers:
   - Default
   - TransparentFX

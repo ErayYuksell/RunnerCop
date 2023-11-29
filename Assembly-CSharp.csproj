@@ -62,6 +62,7 @@
     <Compile Include="Assets\Script\GateController.cs" />
     <Compile Include="Assets\Script\ZombieSpawnerController.cs" />
     <Compile Include="Assets\Script\PlayerSpawnerController.cs" />
+    <Compile Include="Assets\Script\ZombieController.cs" />
     <Compile Include="Assets\Script\CamController.cs" />
   </ItemGroup>
   <ItemGroup>

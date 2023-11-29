@@ -9,6 +9,7 @@ public class ZombieSpawnerController : MonoBehaviour
     [SerializeField] List<GameObject> zombieList = new List<GameObject>();
     GameObject playerObject;
     PlayerSpawnerController playerScript;
+    public bool isZombieAttacking = false;
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("PlayerSpawner");
@@ -41,7 +42,17 @@ public class ZombieSpawnerController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GetComponent<BoxCollider>().enabled = false; // bir kere degdikten sorna diger playerlar tekrar degmesin diye kapadik 
-            playerScript.ZombieDetected();
+            playerScript.ZombieDetected(gameObject);
+            LookAtPlayers(other.gameObject);
+            isZombieAttacking = true;
         }
+    }
+    void LookAtPlayers(GameObject target) // zombie colliderine playerlar degdiginde playerlara donmelerini saglar 
+    {
+        Vector3 pos = transform.position - target.transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(pos); // verdimiz noktalardan bize bir donme degeri dondurur aradaki farki verdigimde ne kadar donmesi gerektigini anlar 
+        lookRotation.x = 0;
+        lookRotation.z = 0; // sadece y de donmesi lazim o yuzden 
+        transform.rotation = lookRotation;
     }
 }

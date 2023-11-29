@@ -101,8 +101,17 @@ public class PlayerSpawnerController : MonoBehaviour
     {
         passTime += Time.deltaTime;
     }
-    public void ZombieDetected()
+    public void ZombieDetected(GameObject target)
     {
         isPlaying = true;
+        LookAtZombies(target);
+    }
+    void LookAtZombies(GameObject target)
+    {
+        Vector3 pos = target.transform.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(pos);
+        lookRotation.x = 0;
+        lookRotation.z = 0;
+        transform.rotation = lookRotation;
     }
 }
