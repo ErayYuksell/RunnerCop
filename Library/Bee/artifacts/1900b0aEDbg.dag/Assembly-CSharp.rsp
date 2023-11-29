@@ -363,6 +363,7 @@
 "Assets/Script/GateController.cs"
 "Assets/Script/PlayerSpawnerController.cs"
 "Assets/Script/RazorController.cs"
+"Assets/Script/ZombieSpawnerController.cs"
 -langversion:9.0
 
 /deterministic

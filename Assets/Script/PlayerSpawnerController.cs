@@ -10,9 +10,9 @@ public class PlayerSpawnerController : MonoBehaviour
     Animator animator;
     bool isPlaying = false;
     [SerializeField] List<GameObject> playerList = new List<GameObject>();
+    float passTime = 0;
     void Start()
     {
-
         animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -20,6 +20,7 @@ public class PlayerSpawnerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        GetTime();
     }
 
     void PlayerMovement()
@@ -52,8 +53,14 @@ public class PlayerSpawnerController : MonoBehaviour
     //    animator.SetBool("IsRun", true);
     //    animator.SetBool("IsIdle", false);
     //}
-    public void SpawnPlayer(int gateValue, GateType gateType)
+    public void SpawnPlayer(int gateValue, GateType gateType) // kapidan gecince + veya * islemine gore player spawn etme 
     {
+        if (passTime < 0.3f) // yan yana 2 gate varken birinden gecip direkt digerine giremesin diye
+        {
+            return;
+        }
+        passTime = 0;
+
         if (gateType == GateType.PlusGate)
         {
             for (int i = 0; i < gateValue; i++)
@@ -71,8 +78,6 @@ public class PlayerSpawnerController : MonoBehaviour
                 playerList.Add(newPlayerObject);
             }
         }
-
-
     }
     Vector3 GetPlayerPosition()
     {
@@ -87,9 +92,17 @@ public class PlayerSpawnerController : MonoBehaviour
             isPlaying = true;
         }
     }
-    public void PlayerGotKilled(GameObject playerGO)
+    public void PlayerGotKilled(GameObject playerGO) // engellere deyen playerlari oldurur 
     {
         playerList.Remove(playerGO);
         Destroy(playerGO);
+    }
+    void GetTime()
+    {
+        passTime += Time.deltaTime;
+    }
+    public void ZombieDetected()
+    {
+        isPlaying = true;
     }
 }
