@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\RazorController.cs" />
     <Compile Include="Assets\Script\GateController.cs" />
+    <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\ZombieSpawnerController.cs" />
     <Compile Include="Assets\Script\PlayerSpawnerController.cs" />
     <Compile Include="Assets\Script\ZombieController.cs" />

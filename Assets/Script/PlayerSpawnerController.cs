@@ -105,6 +105,7 @@ public class PlayerSpawnerController : MonoBehaviour
     {
         isPlaying = true;
         LookAtZombies(target);
+        StartAllCopsShooting();
     }
     void LookAtZombies(GameObject target)
     {
@@ -113,5 +114,26 @@ public class PlayerSpawnerController : MonoBehaviour
         lookRotation.x = 0;
         lookRotation.z = 0;
         transform.rotation = lookRotation;
+    }
+    void LookAtForward()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+    public void AllZombiesKilled()
+    {
+        LookAtForward();
+        MovePlayer();
+    }
+    void MovePlayer()
+    {
+        isPlaying = false;
+    }
+    public void StartAllCopsShooting()
+    {
+        for (int i = 0; i < playerList.Count; i++)
+        {
+            PlayerController cop = playerList[i].GetComponent<PlayerController>();
+            cop.StartShooting();
+        }
     }
 }

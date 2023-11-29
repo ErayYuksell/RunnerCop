@@ -599,6 +599,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 286628187677977255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4550427826851135139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5149772678164607135}
+  m_Layer: 0
+  m_Name: BulletPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5149772678164607135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550427826851135139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.808, z: 0.437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 142776294366190439}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4879722659281577566
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +737,7 @@ GameObject:
   - component: {fileID: 40243773050636417}
   - component: {fileID: 5605764465049425897}
   - component: {fileID: 2459206326307644469}
+  - component: {fileID: 7908194128932748294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -728,6 +760,7 @@ Transform:
   m_Children:
   - {fileID: 5782281960674964218}
   - {fileID: 2238643202330447271}
+  - {fileID: 5149772678164607135}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &40243773050636417
@@ -801,6 +834,21 @@ CapsuleCollider:
   m_Height: 1.8003311
   m_Direction: 1
   m_Center: {x: 0.010067046, y: 0.89345264, z: 0}
+--- !u!114 &7908194128932748294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844163145002109151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d484629de37235b4ab2b35e04562782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletObject: {fileID: 4624894583691535839, guid: 1743ac2fe606b5c4483797dbd2895736, type: 3}
+  bulletSpawnTransform: {fileID: 5149772678164607135}
+  bulletSpeed: 13
 --- !u!1 &6089082773387465853
 GameObject:
   m_ObjectHideFlags: 0

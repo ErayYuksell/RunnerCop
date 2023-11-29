@@ -55,4 +55,18 @@ public class ZombieSpawnerController : MonoBehaviour
         lookRotation.z = 0; // sadece y de donmesi lazim o yuzden 
         transform.rotation = lookRotation;
     }
+    public void ZombieAttackThisCop(GameObject player, GameObject zombie)
+    {
+        zombieList.Remove(zombie);
+        CheckZombieCount();
+        playerScript.PlayerGotKilled(player);
+        Destroy(zombie);
+    }
+    void CheckZombieCount()
+    {
+        if (zombieList.Count <= 0)
+        {
+            playerScript.AllZombiesKilled();
+        }
+    }
 }
